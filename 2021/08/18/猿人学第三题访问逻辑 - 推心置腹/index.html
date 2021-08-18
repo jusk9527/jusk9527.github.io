@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="supervisor 使用技巧, jusk9527的个人博客">
+    <meta name="keywords" content="猿人学第三题访问逻辑-推心置腹, jusk9527的个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>supervisor 使用技巧 | jusk9527的个人博客</title>
+    <title>猿人学第三题访问逻辑-推心置腹 | jusk9527的个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">supervisor 使用技巧</h1>
+                    <h1 class="description center-align post-title">猿人学第三题访问逻辑-推心置腹</h1>
                 </div>
             </div>
         </div>
@@ -436,6 +436,15 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%88%AC%E8%99%AB/" class="post-category">
+                                猿人学爬虫
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -443,7 +452,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-03
+                    2021-08-18
                 </div>
                 
 
@@ -467,153 +476,41 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>以前后台经常这样启动一个程序</p>
-<pre class="line-numbers language-none"><code class="language-none">nohup your-program &amp; &gt; nohup.log &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><a target="_blank" rel="noopener" href="https://match.yuanrenxue.com/match/3">访问逻辑 - 推心置腹</a></p>
+<p>这一题没有非常多的技巧，主要是卡在<code>headers</code>里面字典的顺序</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>观察到每次返回数据前之前都需要先访问<code>jssm</code>接口</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jusk9527/images/data/20210818153251.png" alt="image-20210818153251474"></p>
+<p>细致观察后发现作者意图是先获取请求获取<code>jssm</code>返回的<code>set-cookie</code>,然后添加到<code>3</code>后的<code>cookie</code>中获取数据</p>
+<h3 id="最后解题"><a href="#最后解题" class="headerlink" title="最后解题"></a>最后解题</h3><h4 id="python-代码"><a href="#python-代码" class="headerlink" title="python  代码"></a>python  代码</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token keyword">from</span> collections <span class="token keyword">import</span> Counter
 
-<p>发现这样这样非常不好易于管理, 在使用<strong>supervisor</strong>之后,发现有以下<strong>优点</strong></p>
-<ol>
-<li>可以将非后台运行程序后台运行</li>
-<li>自动监控，重启进程</li>
-<li>方便集成多个程序一起管理</li>
-</ol>
-<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p><a target="_blank" rel="noopener" href="http://supervisord.org/">Supervisor</a>是一个客户端/服务器系统，它允许用户在类unix操作系统上控制多个进程</p>
-<h4 id="supervisor主要包含以下四个部分"><a href="#supervisor主要包含以下四个部分" class="headerlink" title="supervisor主要包含以下四个部分"></a>supervisor主要包含以下四个部分</h4><ul>
-<li><strong>supervisord</strong>：这个是supervisor服务的主要<strong>管理器</strong>，负责管理我们配置的子进程，包括重启崩溃或异常退出的子进程，同时也响应来自客户端的请求</li>
-<li><strong>supervisorctl</strong>：supervisord服务的<strong>客户端命令行</strong>。听过这个，我们可以获得由主进程控制的子进程的状态，停止和启动子进程，并获得主进程的运行列表。<br><img src="https://cdn.jsdelivr.net/gh/jusk9527/images/data/20210226113425.png"><br><img src="https://cdn.jsdelivr.net/gh/jusk9527/images/data/20210226114140.png"></li>
-<li><strong>Web Server</strong>：和supervisorctl功能娉美。这个是通过web界面查看和控制进程状态。<br><img src="https://cdn.jsdelivr.net/gh/jusk9527/images/data/20210226113107.png"></li>
-<li><strong>XML-RPC Interface</strong>：服务于web UI的同一个HTTP服务器提供一个XML-RPC接口，可以用来询问和控制管理程序及其运行的程序</li>
-</ul>
-<h4 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h4><p>supervisor可以运行在大多数类UNIX系统，但是不能运行在任何windows系统，Supervisor运行在python3版本3.4或更高版本以及python2版本2.7上工作。</p>
-<h3 id="安装启动"><a href="#安装启动" class="headerlink" title="安装启动"></a>安装启动</h3><ul>
-<li>查看python 版本</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">python -V
-Python 2.7.5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+num_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+session <span class="token operator">=</span> requests<span class="token punctuation">.</span>session<span class="token punctuation">(</span><span class="token punctuation">)</span>
+headers <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'user-agent'</span><span class="token punctuation">:</span><span class="token string">'yuanrenxue.project'</span><span class="token punctuation">,</span>
+    <span class="token string">'content-length'</span><span class="token punctuation">:</span> <span class="token string">'0'</span><span class="token punctuation">,</span>
+    <span class="token string">'accept'</span><span class="token punctuation">:</span> <span class="token string">'*/*'</span><span class="token punctuation">,</span>
+    <span class="token string">'referer'</span><span class="token punctuation">:</span> <span class="token string">'https://match.yuanrenxue.com/match/3'</span><span class="token punctuation">,</span>
+    <span class="token string">'accept-encoding'</span><span class="token punctuation">:</span> <span class="token string">'gzip,deflate,br'</span><span class="token punctuation">,</span>
+    <span class="token string">'accept-language'</span><span class="token punctuation">:</span> <span class="token string">'zh-TW,zh;q=0.9,en-us;q=0.8,en;q=0.7'</span><span class="token punctuation">,</span>
+    <span class="token string">'cookie'</span><span class="token punctuation">:</span><span class="token string">'sessionid=mkd0y5h364zorpr33f8uxu6ft5a0pj2l;'</span>
+<span class="token punctuation">&#125;</span>
+list_num <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+session<span class="token punctuation">.</span>headers <span class="token operator">=</span> headers
+<span class="token keyword">for</span> page <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    resp <span class="token operator">=</span> session<span class="token punctuation">.</span>post<span class="token punctuation">(</span><span class="token string">'https://match.yuanrenxue.com/jssm'</span><span class="token punctuation">)</span>
 
+    <span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>headers<span class="token punctuation">)</span>
+    response <span class="token operator">=</span> session<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"http://match.yuanrenxue.com/api/match/3?page=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>page<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-<ul>
-<li>如果python 版本低于2.6 的话</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel -y libffi-devel
-wget https:&#x2F;&#x2F;www.python.org&#x2F;ftp&#x2F;python&#x2F;3.6.8&#x2F;Python-3.6.8.tar.xz
-tar xf Python-3.6.8.tar.xz
-cd Python-3.6.8
-.&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;python368
-make &amp;&amp; make install
-echo &#39;export PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;python368&#x2F;bin:$PATH&#39; &gt;&gt; &#x2F;etc&#x2F;profile
-source &#x2F;etc&#x2F;profile
-python3 -V<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">for</span> each <span class="token keyword">in</span> response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        list_num<span class="token punctuation">.</span>append<span class="token punctuation">(</span>each<span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>Counter<span class="token punctuation">(</span>list_num<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-<ul>
-<li>使用 pip 来安装，前提要保证pip版本大于2.6</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">sudo pip install supervisor
-
-# 可能你会收到类似的报错：Supervisor requires Python 2.4 or later but does not work on any version of Python 3.  You are using version 3.4.3 (default, Oct 28 2017, 20:59:04)
-# 可以手动安装新版 Supervisor，它支持 Python3：
-
-pip install git+https:&#x2F;&#x2F;github.com&#x2F;Supervisor&#x2F;supervisor
-
-# 设置环境变量：
-vim ~&#x2F;.bash_profile
-
-在后面补充： PATH&#x3D;$PATH:$HOME&#x2F;bin:&#x2F;usr&#x2F;local&#x2F;python&#x2F;bin
-
-source ~&#x2F;.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><pre class="line-numbers language-none"><code class="language-none">echo_supervisord_conf &gt; &#x2F;etc&#x2F;supervisord.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>打开配置文件：</p>
-<pre class="line-numbers language-none"><code class="language-none">vim &#x2F;etc&#x2F;supervisord.conf
-
-[unix_http_server]
-file&#x3D;&#x2F;tmp&#x2F;supervisor.sock   ; UNIX socket 文件，supervisorctl 会使用
-;chmod&#x3D;0700                 ; socket 文件的 mode，默认是 0700
-;chown&#x3D;nobody:nogroup       ; socket 文件的 owner，格式： uid:gid
-;username&#x3D;user              ; default is no username (open server)
-;password&#x3D;123               ; default is no password (open server)
-
-;[inet_http_server]         ; HTTP 服务器，提供 web 管理界面
-;port&#x3D;127.0.0.1:9001        ; Web 管理后台运行的 IP 和端口，如果开放到公网，需要注意安全性
-;username&#x3D;user              ; 登录管理后台的用户名
-;password&#x3D;123               ; 登录管理后台的密码
-
-[supervisord]
-logfile&#x3D;&#x2F;tmp&#x2F;supervisord.log ; 日志文件，默认是 $CWD&#x2F;supervisord.log
-logfile_maxbytes&#x3D;50MB        ; 日志文件大小，超出会 rotate，默认 50MB
-logfile_backups&#x3D;10           ; 日志文件保留备份数量默认 10
-loglevel&#x3D;info                ; 日志级别，默认 info，其它: debug,warn,trace
-pidfile&#x3D;&#x2F;tmp&#x2F;supervisord.pid ; pid 文件
-nodaemon&#x3D;false               ; 是否在前台启动，默认是 false，即以 daemon 的方式启动
-minfds&#x3D;1024                  ; 可以打开的文件描述符的最小值，默认 1024
-minprocs&#x3D;200                 ; 可以打开的进程数的最小值，默认 200
-
-; the below section must remain in the config file for RPC
-; (supervisorctl&#x2F;web interface) to work, additional interfaces may be
-; added by defining them in separate rpcinterface: sections
-[rpcinterface:supervisor]
-supervisor.rpcinterface_factory &#x3D; supervisor.rpcinterface:make_main_rpcinterface
-
-[supervisorctl]
-serverurl&#x3D;unix:&#x2F;&#x2F;&#x2F;tmp&#x2F;supervisor.sock ; 通过 UNIX socket 连接 supervisord，路径与 unix_http_server 部分的 file 一致
-;serverurl&#x3D;http:&#x2F;&#x2F;127.0.0.1:9001 ; 通过 HTTP 的方式连接 supervisord
-
-;包含其他的配置文件
-[include]
-files &#x3D; relative&#x2F;directory&#x2F;*.ini    ; 可以是 *.conf 或 *.ini<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="配置管理的进程"><a href="#配置管理的进程" class="headerlink" title="配置管理的进程"></a>配置管理的进程</h4><pre class="line-numbers language-none"><code class="language-none">vim supervisord.conf
-
-# 找到最后一行，并取消注释和添加：
-[include]
-files &#x3D; &#x2F;etc&#x2F;supervisor&#x2F;*.conf
-
-$ mkdir &#x2F;etc&#x2F;supervisor
-$ cd &#x2F;etc&#x2F;suervisor
-$ vim Djnago.conf
-
-# 填入以下内容：
-
-[program:Djagno]
-command&#x3D;&#x2F;root&#x2F;.virtualenvs&#x2F;xxx&#x2F;bin&#x2F;gunicorn xxx.wsgi:application -b 0.0.0.0:8004  ; 被监控的进程路径  ; 被监控的进程路径
-directory&#x3D;&#x2F;mnt&#x2F;hao&#x2F;server&#x2F;               ; 执行前要不要先cd到目录$
-autostart&#x3D;true                ; 随着supervisord的启动而启动
-autorestart&#x3D;true              ; 自动重启。。当然要选上了
-startretries&#x3D;10               ; 启动失败时的最多重试次数
-exitcodes&#x3D;0                   ; 正常退出代码
-stopsignal&#x3D;KILL               ; 用来杀死进程的信号
-stopwaitsecs&#x3D;10               ; 发送SIGKILL前的等待时间
-redirect_stderr&#x3D;true          ; 重定向stderr到stdout
-stdout_logfile&#x3D;..&#x2F;..&#x2F;log&#x2F;django&#x2F;django.log                      ；输出日志
-stderr_logfile&#x3D;..&#x2F;..&#x2F;log&#x2F;django&#x2F;django.log                       ; 错误日志
-; 默认为 false，如果设置为 true，当进程收到 stop 信号时，会自动将该信号发给该进$
-stopasgroup&#x3D;true             ; send stop signal to the UNIX process
-; 默认为 false，如果设置为 true，当进程收到 kill 信号时，会自动将该信号发给该进$
-killasgroup&#x3D;true             ; SIGKILL the UNIX process group (def false)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这里说明下: <strong>environment</strong>没啥用。<strong>command</strong> 里面写好环境比较好</p>
-<h4 id="启动-Supervisor"><a href="#启动-Supervisor" class="headerlink" title="启动 Supervisor"></a>启动 Supervisor</h4><p>Supervisor 有两个主要的组成部分：</p>
-<ol>
-<li>supervisord，运行 Supervisor 时会启动一个进程 supervisord，它负责启动所管理的进程，并将所管理的进程作为自己的子进程来启动，而且可以在所管理的进程出现崩溃时自动重启</li>
-<li>supervisorctl，是命令行管理工具，可以用来执行 stop、start、restart 等命令，来对这些子进程进行管理。</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">supervisord -c &#x2F;etc&#x2F;supervisord.conf                                   # 固定配置文件夹启动
-supervisorctl -c &#x2F;etc&#x2F;supervisord.conf status                     # 查看状态<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li>命令参数意义可参考上面 <strong>supervisor主要包含以下四个部分</strong></li>
-</ul>
-<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ol>
-<li>在启动 supervisorctl 的时候可能会接受到 refuse connection 的报错，解决办法：</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none"># 找到 supervisor.sock 的地址
-$ find &#x2F; -name supervisor.sock
-
-# unlink 掉它，*** 换成真实地址
-$ unlink &#x2F;***&#x2F;supervisor.sock&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol start="2">
-<li>还遇到了另外一个问题，在 supervisor 运行一段时间后，web 端会访问不了，在后台企图通过 supervisorctl -c /etc/supervisord.conf 登录，发现还是报 refuse connection 的错误，还有<pre class="line-numbers language-none"><code class="language-none">Error: Another program is already listening on a port that one of our HTTP servers is configured to use. Shut this program down first before starting supervisord.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-尝试将[supervisorctl] 里面的属性 serverurl 修改成 unix 前缀，如 unix:///tmp/supervisord.sock，过一段时间再做观察。</li>
-</ol>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ol>
-<li><a target="_blank" rel="noopener" href="https://my.oschina.net/goskyblue/blog/380828">https://my.oschina.net/goskyblue/blog/380828</a></li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/36459081">https://zhuanlan.zhihu.com/p/36459081</a></li>
-</ol>
+<span class="token keyword">print</span><span class="token punctuation">(</span>Counter<span class="token punctuation">(</span>list_num<span class="token punctuation">)</span><span class="token punctuation">.</span>most_common<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment"># 8717</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -640,7 +537,7 @@ $ unlink &#x2F;***&#x2F;supervisor.sock&#96;<span aria-hidden="true" class="line
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jusk9527.github.io/2021/02/03/supervisor%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">https://jusk9527.github.io/2021/02/03/supervisor%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</a>
+                    <a href="https://jusk9527.github.io/2021/08/18/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E4%B8%89%E9%A2%98%E8%AE%BF%E9%97%AE%E9%80%BB%E8%BE%91%20-%20%E6%8E%A8%E5%BF%83%E7%BD%AE%E8%85%B9/">https://jusk9527.github.io/2021/08/18/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E4%B8%89%E9%A2%98%E8%AE%BF%E9%97%AE%E9%80%BB%E8%BE%91%20-%20%E6%8E%A8%E5%BF%83%E7%BD%AE%E8%85%B9/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -847,9 +744,52 @@ $ unlink &#x2F;***&#x2F;supervisor.sock&#96;<span aria-hidden="true" class="line
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/08/18/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E4%B8%89%E9%A2%98%E8%AE%BF%E9%97%AE%E9%80%BB%E8%BE%91%20-%20%E6%8E%A8%E5%BF%83%E7%BD%AE%E8%85%B9/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="猿人学第三题访问逻辑-推心置腹">
+                        
+                        <span class="card-title">猿人学第三题访问逻辑-推心置腹</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%88%AC%E8%99%AB/" class="post-category">
+                                    猿人学爬虫
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/08/18/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E4%B8%80%E9%A2%98js%20%E6%B7%B7%E6%B7%86%20-%20%E6%BA%90%E7%A0%81%E4%B9%B1%E7%A0%81/">
                     <div class="card-image">
@@ -867,9 +807,9 @@ $ unlink &#x2F;***&#x2F;supervisor.sock&#96;<span aria-hidden="true" class="line
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -882,44 +822,6 @@ $ unlink &#x2F;***&#x2F;supervisor.sock&#96;<span aria-hidden="true" class="line
                         </span>
                     </div>
                 </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/02/03/supervisor%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="supervisor 使用技巧">
-                        
-                        <span class="card-title">supervisor 使用技巧</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-03
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            jusk9527
-                            
-                        </span>
-                    </div>
-                </div>
-
                 
             </div>
         </div>

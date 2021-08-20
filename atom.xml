@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>jusk9527的个人博客</title>
+  
+  <subtitle>唐多令·芦叶满汀洲</subtitle>
+  <link href="https://jusk9527.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://jusk9527.github.io/"/>
+  <updated>2021-08-19T09:03:27.360Z</updated>
+  <id>https://jusk9527.github.io/</id>
+  
+  <author>
+    <name>jusk9527</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>猿人学第十五题备周则意怠-常见则不疑</title>
+    <link href="https://jusk9527.github.io/2021/08/19/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E5%8D%81%E4%BA%94%E9%A2%98%E5%A4%87%E5%91%A8%E5%88%99%E6%84%8F%E6%80%A0-%E5%B8%B8%E8%A7%81%E5%88%99%E4%B8%8D%E7%96%91/"/>
+    <id>https://jusk9527.github.io/2021/08/19/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E5%8D%81%E4%BA%94%E9%A2%98%E5%A4%87%E5%91%A8%E5%88%99%E6%84%8F%E6%80%A0-%E5%B8%B8%E8%A7%81%E5%88%99%E4%B8%8D%E7%96%91/</id>
+    <published>2021-08-19T09:01:43.001Z</published>
+    <updated>2021-08-19T09:03:27.360Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="猿人学爬虫" scheme="https://jusk9527.github.io/categories/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%88%AC%E8%99%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>猿人学第六题js混淆-回溯</title>
+    <link href="https://jusk9527.github.io/2021/08/19/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E5%85%AD%E9%A2%98js%E6%B7%B7%E6%B7%86-%E5%9B%9E%E6%BA%AF/"/>
+    <id>https://jusk9527.github.io/2021/08/19/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E5%85%AD%E9%A2%98js%E6%B7%B7%E6%B7%86-%E5%9B%9E%E6%BA%AF/</id>
+    <published>2021-08-19T08:13:47.579Z</published>
+    <updated>2021-08-19T08:22:26.008Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://match.yuanrenxue.com/match/06&quot;&gt;js 混淆 -</summary>
+        
+      
+    
+    
+    
+    <category term="猿人学爬虫" scheme="https://jusk9527.github.io/categories/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%88%AC%E8%99%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>猿人学第十三题入门级cookie</title>
+    <link href="https://jusk9527.github.io/2021/08/18/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E5%8D%81%E4%B8%89%E9%A2%98%E5%85%A5%E9%97%A8%E7%BA%A7cookie/"/>
+    <id>https://jusk9527.github.io/2021/08/18/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E5%8D%81%E4%B8%89%E9%A2%98%E5%85%A5%E9%97%A8%E7%BA%A7cookie/</id>
+    <published>2021-08-18T09:26:42.325Z</published>
+    <updated>2021-08-18T09:32:18.802Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://match.yuanrenxue.com/match/12&quot;&gt;入门级js&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这道题还是比较简单的，是考察动态cookie 变化的&lt;/p&gt;
+&lt;h3 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="猿人学爬虫" scheme="https://jusk9527.github.io/categories/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%88%AC%E8%99%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>猿人学第十二题入门级js</title>
+    <link href="https://jusk9527.github.io/2021/08/18/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E5%8D%81%E4%BA%8C%E9%A2%98%E5%85%A5%E9%97%A8%E7%BA%A7js/"/>
+    <id>https://jusk9527.github.io/2021/08/18/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E5%8D%81%E4%BA%8C%E9%A2%98%E5%85%A5%E9%97%A8%E7%BA%A7js/</id>
+    <published>2021-08-18T08:52:10.006Z</published>
+    <updated>2021-08-18T09:32:06.151Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="猿人学爬虫" scheme="https://jusk9527.github.io/categories/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%88%AC%E8%99%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>猿人学第三题访问逻辑-推心置腹</title>
+    <link href="https://jusk9527.github.io/2021/08/18/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E4%B8%89%E9%A2%98%E8%AE%BF%E9%97%AE%E9%80%BB%E8%BE%91%20-%20%E6%8E%A8%E5%BF%83%E7%BD%AE%E8%85%B9/"/>
+    <id>https://jusk9527.github.io/2021/08/18/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E4%B8%89%E9%A2%98%E8%AE%BF%E9%97%AE%E9%80%BB%E8%BE%91%20-%20%E6%8E%A8%E5%BF%83%E7%BD%AE%E8%85%B9/</id>
+    <published>2021-08-18T07:43:18.601Z</published>
+    <updated>2021-08-18T07:45:33.084Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://match.yuanrenxue.com/match/3&quot;&gt;访问逻辑 -</summary>
+        
+      
+    
+    
+    
+    <category term="猿人学爬虫" scheme="https://jusk9527.github.io/categories/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%88%AC%E8%99%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>猿人学第一题js混淆-源码乱码</title>
+    <link href="https://jusk9527.github.io/2021/08/18/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E4%B8%80%E9%A2%98js%20%E6%B7%B7%E6%B7%86%20-%20%E6%BA%90%E7%A0%81%E4%B9%B1%E7%A0%81/"/>
+    <id>https://jusk9527.github.io/2021/08/18/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E4%B8%80%E9%A2%98js%20%E6%B7%B7%E6%B7%86%20-%20%E6%BA%90%E7%A0%81%E4%B9%B1%E7%A0%81/</id>
+    <published>2021-08-18T03:34:30.209Z</published>
+    <updated>2021-08-18T07:46:17.334Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://match.yuanrenxue.com/match/1&quot;&gt;js 混淆 -</summary>
+        
+      
+    
+    
+    
+    <category term="猿人学爬虫" scheme="https://jusk9527.github.io/categories/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%88%AC%E8%99%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>supervisor 使用技巧</title>
+    <link href="https://jusk9527.github.io/2021/02/03/supervisor%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    <id>https://jusk9527.github.io/2021/02/03/supervisor%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</id>
+    <published>2021-02-03T14:33:27.289Z</published>
+    <updated>2021-08-18T03:26:45.008Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;以前后台经常这样启动一个程序&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>

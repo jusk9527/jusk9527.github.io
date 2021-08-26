@@ -6,7 +6,7 @@
   <link href="https://jusk9527.github.io/atom.xml" rel="self"/>
   
   <link href="https://jusk9527.github.io/"/>
-  <updated>2021-08-25T10:42:33.105Z</updated>
+  <updated>2021-08-26T04:20:13.379Z</updated>
   <id>https://jusk9527.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>猿人学第八题验证码图文点选</title>
+    <link href="https://jusk9527.github.io/2021/08/26/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E5%85%AB%E9%A2%98%E9%AA%8C%E8%AF%81%E7%A0%81%E5%9B%BE%E6%96%87%E7%82%B9%E9%80%89/"/>
+    <id>https://jusk9527.github.io/2021/08/26/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%AC%AC%E5%85%AB%E9%A2%98%E9%AA%8C%E8%AF%81%E7%A0%81%E5%9B%BE%E6%96%87%E7%82%B9%E9%80%89/</id>
+    <published>2021-08-26T04:19:37.528Z</published>
+    <updated>2021-08-26T04:20:13.379Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://match.yuanrenxue.com/match/8&quot;&gt;验证码</summary>
+        
+      
+    
+    
+    
+    <category term="js 逆向" scheme="https://jusk9527.github.io/categories/js-%E9%80%86%E5%90%91/"/>
+    
+    
+    <category term="猿人学爬虫" scheme="https://jusk9527.github.io/tags/%E7%8C%BF%E4%BA%BA%E5%AD%A6%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>猿人学第七题动态字体,随风漂移</title>
@@ -273,7 +298,7 @@
     <link href="https://jusk9527.github.io/2021/02/03/supervisor%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     <id>https://jusk9527.github.io/2021/02/03/supervisor%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</id>
     <published>2021-02-03T14:33:27.289Z</published>
-    <updated>2021-08-18T03:26:45.008Z</updated>
+    <updated>2021-08-26T04:22:49.216Z</updated>
     
     
       
@@ -287,6 +312,12 @@
     
     
     
+    <category term="工具" scheme="https://jusk9527.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="linux" scheme="https://jusk9527.github.io/tags/linux/"/>
+    
+    <category term="进程管理" scheme="https://jusk9527.github.io/tags/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   

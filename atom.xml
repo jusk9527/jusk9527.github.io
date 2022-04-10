@@ -6,7 +6,7 @@
   <link href="https://jusk9527.github.io/atom.xml" rel="self"/>
   
   <link href="https://jusk9527.github.io/"/>
-  <updated>2021-09-13T03:47:24.051Z</updated>
+  <updated>2022-04-10T03:58:38.113Z</updated>
   <id>https://jusk9527.github.io/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>go hook 的一些方式</title>
+    <link href="https://jusk9527.github.io/2022/04/10/go%20hook%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%B9%E5%BC%8F/"/>
+    <id>https://jusk9527.github.io/2022/04/10/go%20hook%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%B9%E5%BC%8F/</id>
+    <published>2022-04-10T03:41:35.690Z</published>
+    <updated>2022-04-10T03:58:38.113Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;最近想研究一下go hook 的一些方式,发现有些函数都是没有方法体,</summary>
+        
+      
+    
+    
+    
+    <category term="go" scheme="https://jusk9527.github.io/categories/go/"/>
+    
+    
+    <category term="hook" scheme="https://jusk9527.github.io/tags/hook/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅析ORM</title>
+    <link href="https://jusk9527.github.io/2021/10/14/Django%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90--%E6%B5%85%E6%9E%90ORM/"/>
+    <id>https://jusk9527.github.io/2021/10/14/Django%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90--%E6%B5%85%E6%9E%90ORM/</id>
+    <published>2021-10-14T03:28:29.896Z</published>
+    <updated>2021-10-14T03:53:54.579Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前期环境&quot;&gt;&lt;a href=&quot;#前期环境&quot; class=&quot;headerlink&quot; title=&quot;前期环境&quot;&gt;&lt;/a&gt;前期环境&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;pycharm       2018.2&lt;/li&gt;
+&lt;li&gt;Django       </summary>
+        
+      
+    
+    
+    
+    <category term="Django" scheme="https://jusk9527.github.io/categories/Django/"/>
+    
+    
+    <category term="Django" scheme="https://jusk9527.github.io/tags/Django/"/>
+    
+  </entry>
   
   <entry>
     <title>Orderdict 源码阅读</title>
@@ -76,7 +128,7 @@
     <link href="https://jusk9527.github.io/2021/09/10/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
     <id>https://jusk9527.github.io/2021/09/10/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</id>
     <published>2021-09-10T07:15:18.353Z</published>
-    <updated>2021-09-15T03:58:11.980Z</updated>
+    <updated>2021-09-16T03:40:17.760Z</updated>
     
     
       
